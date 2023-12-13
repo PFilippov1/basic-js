@@ -10,10 +10,21 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For the input 'prettyandsimple@example.com', the output should be 'example.com'
  *
  */
-function getEmailDomain(/* email */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function getEmailDomain(email) {
+  let dogIndex = email.lastIndexOf("@");
+console.log(dogIndex)
+  if (dogIndex !== -1) {
+    let newDomain = email.slice(dogIndex + 1);
+    console.log(newDomain);
+    return newDomain
+  } else {
+    console.log("The '@' symbol  not found");
+  }
 }
+
+
+getEmailDomain('prettyandsimple@example.com')
+
 
 module.exports = {
   getEmailDomain
