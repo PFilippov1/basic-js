@@ -14,12 +14,9 @@ const {NotImplementedError} = require('../extensions/index.js');
 function getCommonCharacterCount(s1, s2) {
 
   let count = 0;
-  // Loop through each character in s1
   for (let i = 0; i < s1.length; i++) {
-    // Check if the character exists in s2
     const index = s2.indexOf(s1[i]);
     if (index !== -1) {
-      // If it does, increment the count and remove the character from s2
       count++;
       s2 = s2.slice(0, index) + s2.slice(index + 1);
     }
